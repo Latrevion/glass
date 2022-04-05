@@ -4,38 +4,116 @@
   <meta charset="UTF-8">
   <title>毛玻璃</title>
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
 
-    body{
+    body {
       background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
       display: flex;
       justify-content: center;
+      height: 100vh;
     }
 
-    .card{
+    .card {
       position: relative;
       width: 400px;
       height: 300px;
       top: 200px;
     }
 
+    .main {
+      position: absolute;
+      width: 400px;
+      height: 300px;
+      border-radius: 15px;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, .6),
+        rgba(255, 255, 255, .3),
+        rgba(255, 255, 255, .2)
+      );
+      backdrop-filter: blur(10px);
+      border-top: 2px solid rgba(255, 255, 255, .8);
+      border-left: 2px solid rgba(255, 255, 255, .8);
+    }
+
+    .main > p:first-child {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .main p:last-child {
+      font-size: 26px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: rgba(255,255,255,.5);
+      letter-spacing: 2px;
+    }
+
+    .main a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, .6);
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, .8);
+      display: inline-block;
+      width: 9ch;
+      font: 900 45px Consolas, Monaco, monospace;   /*等宽字体*/
+      overflow: hidden;
+      border-right: 1px solid transparent;
+      animation: typing 5s steps(9),caret  .5s steps(1) infinite;
+    }
 
 
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    @keyframes caret {
+      50% {
+        border-right-color: currentColor
+      }
+    }
+
+
+    .round1 {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-color: skyblue;
+      position: absolute;
+      top: 190px;
+      left: -60px;
+      z-index: -2;
+    }
+
+
+    .round2 {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: palegreen;
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      z-index: -2;
+    }
 
 
   </style>
 </head>
 <body>
-      <div class="card">
-        <div class="main">
-          <p>Latrevion</p>
-          <p>https://github.com/</p>
-        </div>
-        <div class="round1"></div>
-        <div class="round2"></div>
-      </div>
+<div class="card">
+  <div class="main">
+    <p><a href="https://github.com/Latrevion">Latrevion</a></p>
+    <p>github.com</p>
+  </div>
+  <div class="round1"></div>
+  <div class="round2"></div>
+</div>
 </body>
 </html>
